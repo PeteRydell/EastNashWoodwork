@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function () {
   const classes = useStyles();
-  const logo = require('./FontLogo.png');
+//   const logo = require('./FontLogo.png');
 
   return (
     <Container id="navbar">
@@ -52,7 +52,8 @@ export default function () {
             position="absolute"
             top={-8}
             left="5%"
-          ><img id="logo" src={logo} alt="Logo" edge="start"/>
+          >
+          {/* <img id="logo" src={logo} alt="Logo" edge="start"/> */}
           </Box>
           </Hidden>
       </Grid>

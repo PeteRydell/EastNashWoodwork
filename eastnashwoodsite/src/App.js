@@ -1,59 +1,67 @@
-import logo from './Skull.png';
-import './App.css';
 import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
+import './App.css';
 import Nav from './components/Nav';
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import Hidden from '@material-ui/core/Hidden';
+// import Main from './components/Main';
 import { Container } from '@material-ui/core';
-import { Router } from "@reach/router";
+import Grid from '@material-ui/core/Grid';
+import Divider from '@material-ui/core/Divider';
+import About from './components/About';
+// import Project from './components/Project';
+import Footer from './components/Footer';
+// import MoreAbout from './components/MoreAbout'
+// import ContactForm from './components/ContactForm'
+import { render } from "react-dom"
+import { Router } from "@reach/router"
 
-const App = ({children}) => (
+const App = ({ children }) => (
   <div>
-      <Container>
-        <Grid>
-              <Grid item xs={12}>
-                  <div>
-                      <h1 className="maintext">Freelance Full-Stack Developer<br></br>based in Los Angeles California.</h1>
-                  </div>
-              </Grid>
-        </Grid>
-      </Container>
-      </div>
+  <Nav />
+  <Router>
+    <Home path="/" />
+    <Bio path="about" />
+    {/* <Contact path="contact" /> */}
+  </Router>
+  <Footer />
+  </div>
 );
-  
-  //   <Container id="navbar">
-  //   <Grid>
-  //       <AppBar id="appbar" position="static">
-  //         {/* <Grid item xs={12}>
-  //             <Button color="inherit"><Link to="/" class="navlink">Home</Link></Button>
-  //             <Button color="inherit"><Link to="about" class="navlink">About</Link></Button>
-  //             <Button color="inherit">Portfolio</Button> */}
-  //             {/* <Button color="inherit"> <Link to="contact" class="navlink">Contact</Link></Button> */}
-  //         {/* </Grid> */}
-  //       </AppBar>
-  //       <Hidden xsDown>
-  //       <Box
-  //         p={2}
-  //         position="absolute"
-  //         top={-8}
-  //         left="5%"
-  //       ><img id="logo" src={logo} alt="Logo" edge="start"/>
-  //       </Box>
-  //       </Hidden>
-  //   </Grid>
-  // </Container>
-  //   // {/* <div className="App">
-  //   //   <header className="App-header">
-  //   //     <img src={logo} className="App-logo" alt="logo" />
-  //   //     <p>
-  //   //       East Nashville Woodwork coming soon.
-  //   //     </p>
-  //   //   </header>
-  //   // </div> */}
-  // );
 
+const Home = () => (
+  <div>
+        <Container>
+          <Grid>
+              <Grid item xs={12}>
+                {/* <Main /> */}
+                <Divider id="line"/>
+              </Grid>
+          </Grid>
+        </Container>
+        <About />
+        {/* <Project /> */}
+  </div>
+);
+
+const Bio = () => (
+  <div>
+    <Container>
+      <Grid item xs={12}></Grid>
+      <Grid item xs={12}>
+        {/* <MoreAbout /> */}
+      </Grid>
+    </Container>
+  </div>
+);
+
+const Contact = () => (
+  <div>
+    <Container>
+      <Grid item xs={12}></Grid>
+      <Grid item xs={12}>
+        {/* <ContactForm /> */}
+      </Grid>
+    </Container>
+  </div>
+);
+
+
+render(<App />, document.getElementById("root"));
 export default App;
