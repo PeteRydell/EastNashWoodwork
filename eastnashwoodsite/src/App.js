@@ -2,17 +2,17 @@ import logo from './Skull.png';
 import './App.css';
 import React from 'react';
 // import { makeStyles } from '@material-ui/core/styles';
+import Nav from './components/Nav';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Hidden from '@material-ui/core/Hidden';
 import { Container } from '@material-ui/core';
-// import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 
-function App() {
-  return (
- 
+const App = ({children}) => (
+  <div>
       <Container>
         <Grid>
               <Grid item xs={12}>
@@ -22,7 +22,8 @@ function App() {
               </Grid>
         </Grid>
       </Container>
-  );
+      </div>
+);
   
   //   <Container id="navbar">
   //   <Grid>
@@ -54,6 +55,5 @@ function App() {
   //   //   </header>
   //   // </div> */}
   // );
-}
 
 export default App;
